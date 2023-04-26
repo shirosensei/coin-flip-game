@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coin Flip Game</title>
+</head>
+<body>
+    <h1>Coin Flip Game</h1>
+    <p>Click the button to flip a coin:</p>
+    <button id="flip-button">Flip the coin!</button>
+    <p id="result"></p>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(function() {
+            $('#flip-button').click(function() {
+                $.get('/flip', function(result) {
+                    $('#result').text(result);
+                });
+            });
+        });
+    </script>
+
+    <!-- <script>
+        var button = document.getElementById('flip-button');
+        var result = document.getElementById('result');
+
+        button.addEventListener('click', function(event) {
+            event.preventDefault();
+
+         result.textContent = Math.random() < 0.5 ? 'heads' : 'tails';
+
+         })
+    </script> -->
+
+</body>
+</html>
